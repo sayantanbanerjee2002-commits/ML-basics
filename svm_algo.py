@@ -33,7 +33,7 @@ class SimpleSVM:
         # Converts the mismatched labels in -1 and 1
         y_ = np.where(y <= 0, -1, 1) # condition checking in ndarray
         self.w = np.ones(n_features)
-        self.b = 0.5
+        self.b = 0.05
         
         # Training loop using Gradient Descent:-
         for iteration in range(self.n_iterations):
