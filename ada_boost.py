@@ -80,7 +80,8 @@ class AdaBoost:
             # Try all features
             for feature_i in range(n_features):
                 X_column = X[:, feature_i]
-                thresholds = np.unique(X_column)  
+                values = np.sort(np.unique(X_column))
+                thresholds =(values[:-1] + values[1:])/2.0
                 
                 # Try both directions of inequality:-
                 for threshold in thresholds:
@@ -114,8 +115,8 @@ class AdaBoost:
             
             #  Update weights:-
             # Increase weight of misclassified points, decrese weight of corrected data points
-            # Formula: w = w * exp(-alpha)
-            w *= np.exp(-clf.alpha )
+            # Formula: w = w * exp(-alpha * y * predictions)
+            w *= np.exp(-clf.alpha * y * predictions )
             # Normalize weights so that sum of all weights result 1
             w /= np.sum(w)
             
