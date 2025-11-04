@@ -6,4 +6,5 @@ KNN Algorithm
 Decision Tree
 SVM Algorithm
 Adaboost
-Xtreme Gracient Boost
+Gradient_descent optimized 
+
