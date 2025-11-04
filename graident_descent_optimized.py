@@ -126,8 +126,7 @@ def ask_int(prompt, default):
             print("Please enter a valid integer or press Enter for default.")
 
 
-if __name__ == "__main__":
-    # Example function: f(x) = x^2 (simple U-shaped). You can change these.
+if __name__ == "__main__":   
     def f(x):
         return x ** 2
 
@@ -149,7 +148,7 @@ if __name__ == "__main__":
 
     plot_interval = ask_int("Plot every N iterations", 10)
 
-    # Create and run the gradient descent
+    # Create new object and run the gradient descent
     gd = GradientDescent1D(
         function=f,
         derivative=df,
